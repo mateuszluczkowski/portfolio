@@ -1,0 +1,35 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.05);
+
+    &__brand-name {
+        font-family: $secondary-font;
+        font-size: 25px;
+        font-weight: 400;
+        // text-transform: uppercase;
+        margin: 10px 30px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+    }
+
+    &__link {
+        display: block;
+        margin: 10px 30px;
+        border: 0;
+        font-family: $secondary-font;
+        font-size: 20px;
+        color: $main-color;
+        text-decoration: none;
+        background-color: transparent;
+        transition: .4s;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
