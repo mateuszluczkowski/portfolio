@@ -1,11 +1,12 @@
 .Navbar {
     display: flex;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.04);
 
     &__brand-name {
         font-family: $secondary-font;
-        font-size: 25px;
+        font-size: 23px;
+        color: $font-color;
         font-weight: 400;
         // text-transform: uppercase;
         margin: 10px 30px;
@@ -19,14 +20,19 @@
 
     &__link {
         display: block;
-        margin: 10px 30px;
+        margin: 10px 20px;
         border: 0;
         font-family: $secondary-font;
-        font-size: 20px;
-        color: $main-color;
+        font-size: 18px;
+        color: $font-color;
         text-decoration: none;
         background-color: transparent;
         transition: .4s;
+
+        &.active {
+            color: black;
+            font-weight: 500;
+        }
 
         &:hover {
             color: black;

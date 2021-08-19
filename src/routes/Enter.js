@@ -48,7 +48,7 @@ class Enter extends React.Component {
             Szukam pracy na stanowisku Junior Front-End Developer. Jeśli
             potrzebujesz Pracownika przez duże "P" kliknij w przycisk Enter.
           </p>
-          <Link to="/main" className="Enter__button">
+          <Link to="/start" className="Enter__button">
             Enter
           </Link>
         </div>
