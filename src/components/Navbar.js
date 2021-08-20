@@ -24,6 +24,24 @@ const Navbar = (props) => {
           );
         })}
       </ul>
+      <div className="Navbar__socialmedia">
+        <a
+          href="https://www.facebook.com/profile.php?id=100001072855712"
+          className="Navbar__link Navbar__link--socialmedia"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fab fa-facebook"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/whoochcovsky/"
+          className="Navbar__link Navbar__link--socialmedia"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fab fa-instagram"></i>
+        </a>
+      </div>
     </div>
   );
 };

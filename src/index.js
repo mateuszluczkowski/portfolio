@@ -10,7 +10,8 @@ import Projects from "./routes/Projects";
 import Start from "./routes/Start";
 
 import "./sass/style.scss";
-
+import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+import "../node_modules/@fortawesome/fontawesome-free/js/all";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

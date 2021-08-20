@@ -1,7 +1,9 @@
 .Navbar {
+    padding: 10px 0;
     display: flex;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.04);
+    position: relative;
 
     &__brand-name {
         font-family: $secondary-font;
@@ -14,7 +16,6 @@
 
     &__list {
         display: flex;
-        justify-content: flex-start;
         list-style: none;
     }
 
@@ -28,6 +29,13 @@
         text-decoration: none;
         background-color: transparent;
         transition: .4s;
+
+        &--socialmedia {
+            display: inline-block;
+            margin: 0px 15px;
+            font-size: 30px;
+
+        }
 
         &.active {
             color: $font-color-active;
@@ -43,4 +51,14 @@
             color: $font-color-active;
         }
     }
+
+    &__socialmedia {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0 15px;
+    }
+
+
 }
