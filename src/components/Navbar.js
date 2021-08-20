@@ -1,5 +1,5 @@
 import NavLink from "./NavLink";
-function Navbar(props) {
+const Navbar = (props) => {
   const routes = [
     { path: "/start", name: "Start", Component: "Start" },
     { path: "/app", name: "Aplikacje React", Component: "App" },
@@ -26,5 +26,5 @@ function Navbar(props) {
       </ul>
     </div>
   );
-}
+};
 export default Navbar;

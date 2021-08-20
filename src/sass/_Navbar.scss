@@ -30,12 +30,17 @@
         transition: .4s;
 
         &.active {
-            color: black;
+            color: $font-color-active;
             font-weight: 500;
         }
 
         &:hover {
-            color: black;
+            color: $font-color-hover;
+            ;
+        }
+
+        &.active:hover {
+            color: $font-color-active;
         }
     }
 }

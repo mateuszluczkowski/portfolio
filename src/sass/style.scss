@@ -8,7 +8,9 @@
 @import 'reset';
 @import '_Navbar';
 
-
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: $background-color;
