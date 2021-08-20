@@ -19,13 +19,22 @@ class Enter extends React.Component {
     });
   }
   mouseMovedata = (event) => {
-    const clientX = event.clientX;
-    const clientY = event.clientY;
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    const ratio = 3;
-    const ratioX = clientX / windowWidth / ratio;
-    const ratioY = clientY / windowHeight / ratio;
+    const mouseMoveData = {
+      axisX: {
+        clientX: event.clientX,
+        windowWidth: window.innerWidth,
+      },
+      axisY: {
+        clientY: event.clientY,
+        windowHeight: window.innerHeight,
+      },
+      ratio: 3,
+    };
+    const { axisX, axisY, ratio } = mouseMoveData;
+
+    const ratioX = axisX.clientX / axisX.windowWidth / ratio;
+    const ratioY = axisY.clientY / axisY.windowHeight / ratio;
+
     this.setState({
       backgroundColor: `rgb(${150 * ratioX}, ${ratioX * 150}, ${
         ratioY * 220 + 30
