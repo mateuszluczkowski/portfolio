@@ -1,42 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../sass/Enter.scss";
+
+document.title = "Witaj - Portfolio - Mateusz Łuczkowski";
+
 const Enter = () => {
   const [backgroundColor, setBackgroundColor] = useState(`rgb(0, 0, 0)`);
 
-  const handleMouseMove = (ratioX, ratioY) => {
+  const handleMouseMove = (multiplerX, multiplerY) => {
     setBackgroundColor(
-      `rgb(${150 * ratioX}, ${ratioX * 150}, ${ratioY * 220 + 30})`
+      `rgb(${150 * multiplerX}, ${multiplerX * 150}, ${multiplerY * 220 + 30})`
     );
   };
-
-  const mouseMovedata = (event) => {
+  const mouseMoveEventData = (event) => {
     const mouseMoveData = {
       axisX: {
-        clientX: event.clientX,
+        client: event.clientX,
         windowWidth: window.innerWidth,
       },
       axisY: {
-        clientY: event.clientY,
+        client: event.clientY,
         windowHeight: window.innerHeight,
       },
       ratio: 3,
     };
     const { axisX, axisY, ratio } = mouseMoveData;
-
-    const ratioX = axisX.clientX / axisX.windowWidth / ratio;
-    const ratioY = axisY.clientY / axisY.windowHeight / ratio;
-    handleMouseMove(ratioX, ratioY);
+    const multiplerX = axisX.client / axisX.windowWidth / ratio;
+    const multiplerY = axisY.client / axisY.windowHeight / ratio;
+    handleMouseMove(multiplerX, multiplerY);
   };
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
-      mouseMovedata(event);
+      mouseMoveEventData(event);
     });
     return function cleanup() {
       document.removeEventListener(
         "mousemove",
         (event) => {
-          mouseMovedata(event);
+          mouseMoveEventData(event);
         },
         false
       );
@@ -50,8 +51,8 @@ const Enter = () => {
         </div>
         <div className="Enter__subtitle">Nazywam się Mateusz Łuczkowski</div>
         <p className="Enter__text">
-          Szukam pracy na stanowisku Junior Front-End Developer. Jeśli
-          potrzebujesz Pracownika przez duże "P" kliknij w przycisk Enter.
+          Szukam pracy na stanowisku Junior Front-End Developer. Potrzebujesz w
+          swoim zespole wirtuoza programowania? Kliknij w przycisk ENTER.
         </p>
         <Link to="/start" className="Enter__button">
           <div className="Enter__button-border"></div>
