@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AboutMe from "./routes/AboutMe";
 import App from "./routes/App";
 import Contact from "./routes/Contact";
-import Enter from "./routes/Enter";
+import EnterContainer from "./routes/EnterContainer";
 import Projects from "./routes/Projects";
-import Start from "./routes/Start";
+import StartContainer from "./routes/StartContainer";
 
 import "./sass/style.scss";
 import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
@@ -28,13 +28,13 @@ ReactDOM.render(
           <Contact />
         </Route>
         <Route path="/start">
-          <Start />
+          <StartContainer />
         </Route>
         <Route path="/projects">
           <Projects />
         </Route>
         <Route exact path="/">
-          <Enter />
+          <EnterContainer />
         </Route>
       </Switch>
     </Router>
