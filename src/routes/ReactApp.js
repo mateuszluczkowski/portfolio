@@ -1,4 +1,4 @@
 const ReactApp = () => {
-  return <div className="App"></div>;
+  return <div className="ReactApp"></div>;
 };
 export default ReactApp;

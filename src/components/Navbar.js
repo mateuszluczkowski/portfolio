@@ -4,7 +4,7 @@ import NavSocialLink from "./NavSocialLink";
 const Navbar = (props) => {
   const routes = [
     { path: "/start", name: "Start", Component: "Start" },
-    { path: "/app", name: "Aplikacje React", Component: "App" },
+    { path: "/reactapp", name: "Aplikacje React", Component: "ReactApp" },
     { path: "/projects", name: "Moje Realizacje", Component: "Projects" },
     { path: "/aboutme", name: "O mnie", Component: "AboutMe" },
     { path: "/contact", name: "Kontakt", Component: "Contact" },

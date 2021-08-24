@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/aboutme">
           <AboutMe />
         </Route>
-        <Route path="/app">
+        <Route path="/reactapp">
           <ReactApp />
         </Route>
         <Route path="/contact">
