@@ -1,9 +1,4 @@
-import Navbar from "../components/Navbar";
 const Contact = () => {
-  return (
-    <div className="Contact">
-      <Navbar active="Contact" />
-    </div>
-  );
+  return <div className="Contact"></div>;
 };
 export default Contact;

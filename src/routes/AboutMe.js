@@ -1,9 +1,4 @@
-import Navbar from "../components/Navbar";
 const AboutMe = () => {
-  return (
-    <div className="AboutMe">
-      <Navbar active="AboutMe" />
-    </div>
-  );
+  return <div className="AboutMe"></div>;
 };
 export default AboutMe;

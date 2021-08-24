@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Enter from "./Enter";
+import { useState, useEffect } from "react";
 
+import Enter from "./Enter";
 import "../sass/Enter.scss";
 
-document.title = "Witaj - Portfolio - Mateusz Łuczkowski";
-
 const EnterContainer = () => {
+  document.title = "Witaj - Portfolio - Mateusz Łuczkowski";
   const [backgroundColor, setBackgroundColor] = useState(`rgb(0, 0, 0)`);
 
   const handleMouseMove = (multiplerX, multiplerY) => {

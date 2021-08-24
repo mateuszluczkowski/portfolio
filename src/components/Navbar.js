@@ -1,4 +1,6 @@
 import NavLink from "./NavLink";
+import NavSocialLink from "./NavSocialLink";
+
 const Navbar = (props) => {
   const routes = [
     { path: "/start", name: "Start", Component: "Start" },
@@ -9,7 +11,7 @@ const Navbar = (props) => {
   ];
 
   return (
-    <div className="Navbar">
+    <div className="Navbar" style={props.isVisible}>
       <div className="Navbar__brand-name">Mateusz Łuczkowski</div>
       <ul className="Navbar__list">
         {routes.map((item, index) => {
@@ -25,22 +27,14 @@ const Navbar = (props) => {
         })}
       </ul>
       <div className="Navbar__socialmedia">
-        <a
-          href="https://www.facebook.com/profile.php?id=100001072855712"
-          className="Navbar__link Navbar__link--socialmedia"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fab fa-facebook"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/whoochcovsky/"
-          className="Navbar__link Navbar__link--socialmedia"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fab fa-instagram"></i>
-        </a>
+        <NavSocialLink
+          path="https://www.facebook.com/profile.php?id=100001072855712"
+          icon="fa-facebook"
+        />
+        <NavSocialLink
+          path="https://www.instagram.com/whoochcovsky/"
+          icon="fa-instagram"
+        />
       </div>
     </div>
   );
