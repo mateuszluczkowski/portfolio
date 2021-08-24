@@ -15,7 +15,7 @@ const StartContainer = () => {
 
   const textTyping = "Typowanie piękne tutaj następuje";
 
-  const cursorBlinkStyle = {
+  const cursorBlinkingStyle = {
     opacity: isNaN(Number(isVibleCursor)) ? true : Number(isVibleCursor),
   };
 
@@ -39,7 +39,7 @@ const StartContainer = () => {
     }
   });
 
-  return <Start cursorBlinkStyle={cursorBlinkStyle} text={text} />;
+  return <Start cursorBlinkingStyle={cursorBlinkingStyle} text={text} />;
 };
 
 export default StartContainer;
