@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Enter = (props) => {
+const Enter = ({ backgroundColor }) => {
   return (
-    <div className="wrapper" style={{ backgroundColor: props.backgroundColor }}>
+    <div className="wrapper" style={{ backgroundColor }}>
       <div className="Enter">
         <div className="Enter__title">
           Witaj na moim autorskim <span className="Enter__span">Portfolio</span>

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Start from "./Start";
-
 import "../sass/_start.scss";
 
-const delayTyping = 30;
+const delayTyping = 40;
 const delayCursorBlink = 1000;
 
 document.title = "Start - Portfolio - Mateusz Łuczkowski";
@@ -14,7 +13,7 @@ const StartContainer = () => {
   const [count, setCount] = useState(0);
   const [isVibleCursor, setIsVibleCursor] = useState("true");
 
-  const textTyping = "Jednak się udało zrobić Typing Animation";
+  const textTyping = "Typowanie piękne tutaj następuje";
 
   const cursorBlinkStyle = {
     opacity: isNaN(Number(isVibleCursor)) ? true : Number(isVibleCursor),
