@@ -10,7 +10,6 @@ const Navbar = (props) => {
           return (
             <NavLink
               key={index}
-              active={props.active === item.Component}
               path={item.path}
               name={item.name}
               Component={item.Component}

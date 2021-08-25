@@ -7,6 +7,7 @@ import Projects from "./routes/Projects";
 import StartContainer from "./routes/StartContainer";
 //layout
 import Navbar from "./components/Navbar";
+import NavArrows from "./components/NavArrows";
 import "./sass/style.scss";
 import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import "../node_modules/@fortawesome/fontawesome-free/js/all";
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <Router>
       <Navbar routes={routes} />
+      <NavArrows routes={routes} />
       {routes.map((route, index) => {
         return (
           <Switch key={index}>

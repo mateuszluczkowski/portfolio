@@ -5,6 +5,8 @@
     background-color: transparent;
     position: relative;
 
+    z-index: 3;
+
     &__brand-name {
         font-family: $secondary-font;
         font-size: 23px;
