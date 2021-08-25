@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 
-const Enter = ({ backgroundColor }) => {
+const Enter = ({ backgroundColor, mouseMoveEventData }) => {
   return (
-    <div className="wrapper" style={{ backgroundColor }}>
+    <div
+      className="wrapper"
+      onMouseMove={mouseMoveEventData}
+      style={{ backgroundColor }}
+    >
       <div className="Enter">
         <div className="Enter__title">
           Witaj na moim autorskim <span className="Enter__span">Portfolio</span>

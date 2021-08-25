@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Enter from "./Enter";
 import "../sass/Enter.scss";
@@ -29,21 +29,13 @@ const EnterContainer = () => {
     const multiplerY = axisY.client / axisY.windowHeight / ratio;
     handleMouseMove(multiplerX, multiplerY);
   };
-  useEffect(() => {
-    document.addEventListener("mousemove", (event) => {
-      mouseMoveEventData(event);
-    });
-    return function cleanup() {
-      document.removeEventListener(
-        "mousemove",
-        (event) => {
-          mouseMoveEventData(event);
-        },
-        false
-      );
-    };
-  });
-  return <Enter backgroundColor={backgroundColor} />;
+
+  return (
+    <Enter
+      backgroundColor={backgroundColor}
+      mouseMoveEventData={mouseMoveEventData}
+    />
+  );
 };
 
 export default EnterContainer;
