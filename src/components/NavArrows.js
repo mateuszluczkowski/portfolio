@@ -3,7 +3,8 @@ const NavArrows = ({ routes }) => {
     routes.findIndex((route) => {
       return route.path === window.location.pathname;
     });
-  const activeRouteIndex = findActiveRouteIndex();
+  const activeRouteIndex =
+    findActiveRouteIndex() < 0 ? 0 : findActiveRouteIndex();
   const nextRoute = routes[activeRouteIndex + 1]
     ? routes[activeRouteIndex + 1].path
     : null;
@@ -38,7 +39,8 @@ const NavArrows = ({ routes }) => {
               key={index}
               href={route.path}
               className={
-                window.location.pathname === route.path
+                window.location.pathname === route.path ||
+                (window.location.pathname === "/" && route.path === "/start")
                   ? "dots__item active"
                   : "dots__item"
               }

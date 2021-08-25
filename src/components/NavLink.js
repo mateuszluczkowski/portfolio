@@ -3,7 +3,8 @@ const NavLink = (props) => {
     <li className="Navbar__item">
       <a
         className={
-          window.location.pathname === props.path
+          window.location.pathname === props.path ||
+          (window.location.pathname === "/" && props.path === "/start")
             ? "Navbar__link active"
             : "Navbar__link"
         }
