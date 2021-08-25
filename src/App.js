@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
+
 import AboutMe from "./routes/AboutMe";
 import ReactApp from "./routes/ReactApp";
 import Contact from "./routes/Contact";
@@ -13,6 +15,7 @@ import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import "../node_modules/@fortawesome/fontawesome-free/js/all";
 
 const App = () => {
+  let location = useLocation();
   const routes = [
     { path: "/start", name: "Start", Component: <StartContainer /> },
     { path: "/reactapp", name: "Aplikacje React", Component: <ReactApp /> },
@@ -22,22 +25,39 @@ const App = () => {
   ];
 
   return (
-    <Router>
-      <Navbar routes={routes} />
-      <NavArrows routes={routes} />
-      {routes.map((route, index) => {
+    <>
+      <Navbar routes={routes} location={location} />
+      <NavArrows routes={routes} location={location} />
+      {routes.map(({ path, Component }) => {
         return (
-          <Switch key={index}>
-            <Route path={route.path}>{route.Component}</Route>
-          </Switch>
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition
+                in={match != null}
+                timeout={300}
+                classNames="page"
+                unmountOnExit
+              >
+                <div className="page">{Component}</div>
+              </CSSTransition>
+            )}
+          </Route>
         );
       })}
-      <Switch>
-        <Route exact path="/">
-          <EnterContainer />
-        </Route>
-      </Switch>
-    </Router>
+
+      <Route exact path="/">
+        {({ match }) => (
+          <CSSTransition
+            in={match != null}
+            timeout={300}
+            classNames="page"
+            unmountOnExit
+          >
+            <EnterContainer />
+          </CSSTransition>
+        )}
+      </Route>
+    </>
   );
 };
 export default App;

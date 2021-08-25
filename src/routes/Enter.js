@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Enter = ({ backgroundColor, mouseMoveEventData }) => {
   return (
@@ -16,11 +16,11 @@ const Enter = ({ backgroundColor, mouseMoveEventData }) => {
           Szukam pracy na stanowisku Junior Front-End Developer. Potrzebujesz w
           swoim zespole wirtuoza programowania? Kliknij w przycisk ENTER.
         </p>
-        <Link to="/start" className="Enter__button">
+        <NavLink to="/start" className="Enter__button">
           <div className="Enter__button-border"></div>
           <div className="Enter__button-border"></div>
           Enter
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

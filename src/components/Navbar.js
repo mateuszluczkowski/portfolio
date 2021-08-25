@@ -1,19 +1,14 @@
-import NavLink from "./NavLink";
+import NaviLink from "./NaviLink";
 import NavSocialLink from "./NavSocialLink";
 
-const Navbar = (props) => {
+const Navbar = ({ routes, location }) => {
   return (
     <div className="Navbar">
       <div className="Navbar__brand-name">Mateusz Łuczkowski</div>
       <ul className="Navbar__list">
-        {props.routes.map((item, index) => {
+        {routes.map(({ path, name }, index) => {
           return (
-            <NavLink
-              key={index}
-              path={item.path}
-              name={item.name}
-              Component={item.Component}
-            />
+            <NaviLink key={index} path={path} name={name} location={location} />
           );
         })}
       </ul>
