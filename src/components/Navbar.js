@@ -2,19 +2,11 @@ import NavLink from "./NavLink";
 import NavSocialLink from "./NavSocialLink";
 
 const Navbar = (props) => {
-  const routes = [
-    { path: "/start", name: "Start", Component: "Start" },
-    { path: "/reactapp", name: "Aplikacje React", Component: "ReactApp" },
-    { path: "/projects", name: "Moje Realizacje", Component: "Projects" },
-    { path: "/aboutme", name: "O mnie", Component: "AboutMe" },
-    { path: "/contact", name: "Kontakt", Component: "Contact" },
-  ];
-
   return (
-    <div className="Navbar" style={props.isVisible}>
+    <div className="Navbar">
       <div className="Navbar__brand-name">Mateusz Łuczkowski</div>
       <ul className="Navbar__list">
-        {routes.map((item, index) => {
+        {props.routes.map((item, index) => {
           return (
             <NavLink
               key={index}

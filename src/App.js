@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import AboutMe from "./routes/AboutMe";
 import ReactApp from "./routes/ReactApp";
 import Contact from "./routes/Contact";
@@ -13,25 +12,25 @@ import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 import "../node_modules/@fortawesome/fontawesome-free/js/all";
 
 const App = () => {
+  const routes = [
+    { path: "/start", name: "Start", Component: <StartContainer /> },
+    { path: "/reactapp", name: "Aplikacje React", Component: <ReactApp /> },
+    { path: "/projects", name: "Moje Realizacje", Component: <Projects /> },
+    { path: "/aboutme", name: "O mnie", Component: <AboutMe /> },
+    { path: "/contact", name: "Kontakt", Component: <Contact /> },
+  ];
+
   return (
     <Router>
-      <Navbar />
+      <Navbar routes={routes} />
+      {routes.map((route, index) => {
+        return (
+          <Switch key={index}>
+            <Route path={route.path}>{route.Component}</Route>
+          </Switch>
+        );
+      })}
       <Switch>
-        <Route path="/aboutme">
-          <AboutMe />
-        </Route>
-        <Route path="/reactapp">
-          <ReactApp />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/start">
-          <StartContainer />
-        </Route>
-        <Route path="/projects">
-          <Projects />
-        </Route>
         <Route exact path="/">
           <EnterContainer />
         </Route>
