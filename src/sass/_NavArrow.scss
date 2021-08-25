@@ -15,6 +15,7 @@
         transform: translateY(-50%);
         cursor: pointer;
         transition: .4s;
+        color: rgba(255, 255, 255, 0.4);
 
         &:hover {
             color: white;
@@ -26,6 +27,17 @@
 
         &--left {
             left: 50px;
+        }
+
+        &--disabled {
+            cursor: default;
+            color: rgba(255, 255, 255, 0.1);
+
+            transition: .4s;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.1);
+            }
         }
 
     }

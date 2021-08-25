@@ -1,10 +1,38 @@
-const NavArrows = (props) => {
+const NavArrows = ({ routes }) => {
+  const findActiveRouteIndex = () =>
+    routes.findIndex((route) => {
+      return route.path === window.location.pathname;
+    });
+  const activeRouteIndex = findActiveRouteIndex();
+  const nextRoute = routes[activeRouteIndex + 1]
+    ? routes[activeRouteIndex + 1].path
+    : null;
+  const prevRoute = routes[activeRouteIndex - 1]
+    ? routes[activeRouteIndex - 1].path
+    : null;
+
   return (
     <div className="NavArrows">
-      <button className="fas fa-chevron-right NavArrows__arrow NavArrows__arrow--right"></button>
-      <button className="fas fa-chevron-left  NavArrows__arrow NavArrows__arrow--left"></button>
+      <a
+        href={nextRoute}
+        className={`NavArrows__arrow NavArrows__arrow--right${
+          nextRoute ? "" : " NavArrows__arrow--disabled"
+        }`}
+      >
+        {" "}
+        <i className="fas fa-chevron-right"></i>
+      </a>
+      <a
+        href={prevRoute}
+        className={`NavArrows__arrow NavArrows__arrow--left${
+          prevRoute ? "" : " NavArrows__arrow--disabled"
+        }`}
+      >
+        <i className="fas fa-chevron-left  "></i>
+      </a>
+
       <div className="dots">
-        {props.routes.map((route, index) => {
+        {routes.map((route, index) => {
           return (
             <a
               key={index}
